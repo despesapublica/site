@@ -1,0 +1,20 @@
+[31-Mar-2011 04:03:27] Error at \sapphire\core\model\MySQLDatabase.php line 525: Couldn't run query: 
+SELECT HEX(c.Id) as Id, c.Url, c.Descricao, c.DataPublicacao, c.DataContrato, c.Preco, c.NumAdjudicantes, c.NumContratados, HEX(ea.Id) as ea_Id, ea.Nif as ea_Nif, ea.Nome as ea_Nome, HEX(ec.Id) as ec_Id, ec.Nif as ec_Nif, ec.Nome as ec_Nome, ec.DataCriacao as ec_DataCriacao 
+FROM ad_contrato c
+INNER JOIN ad_contrato_entidade ce ON ( c.id = ce.IdContrato AND ce.Tipo = 'C' )
+INNER JOIN `entidade` e ON ce.IdEntidade = e.Id  left join entidade ea on c.IdEntidadeAdjudicante = ea.Id 
+WHERE 1  AND DATEDIFF( c.DataPublicacao, e.DataCriacao ) < 0 OR DATEDIFF( c.DataContrato, e.DataCriacao ) < 0
+ORDER BY DataPublicacao desc
+LIMIT 0, 40 
+
+Unknown column 'ec.Id' in 'field list' (http://toshiba/opendata/site3/AdjudicacoesDirectasService/empNovas/?&_search=false&nd=1301583735656&rows=40&page=1&sidx=DataPublicacao&sord=desc)
+[31-Mar-2011 04:03:37] Error at \sapphire\core\model\MySQLDatabase.php line 525: Couldn't run query: 
+SELECT HEX(c.Id) as Id, c.Url, c.Descricao, c.DataPublicacao, c.DataContrato, c.Preco, c.NumAdjudicantes, c.NumContratados, HEX(ea.Id) as ea_Id, ea.Nif as ea_Nif, ea.Nome as ea_Nome, HEX(ec.Id) as ec_Id, ec.Nif as ec_Nif, ec.Nome as ec_Nome, ec.DataCriacao as ec_DataCriacao 
+FROM ad_contrato c
+INNER JOIN ad_contrato_entidade ce ON ( c.id = ce.IdContrato AND ce.Tipo = 'C' )
+INNER JOIN `entidade` e ON ce.IdEntidade = e.Id  left join entidade ea on c.IdEntidadeAdjudicante = ea.Id 
+WHERE 1  AND DATEDIFF( c.DataPublicacao, e.DataCriacao ) < 0 OR DATEDIFF( c.DataContrato, e.DataCriacao ) < 0
+ORDER BY DataPublicacao desc
+LIMIT 0, 40 
+
+Unknown column 'ec.Id' in 'field list' (http://toshiba/opendata/site3/AdjudicacoesDirectasService/empNovas/?&_search=false&nd=1301583735656&rows=40&page=1&sidx=DataPublicacao&sord=desc)
